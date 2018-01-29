@@ -9,6 +9,7 @@ namespace HumaneSociety.cs
     class Animal
     {
         private bool status;
+        private int roomNumber;
 
         public Animal()
         {
@@ -19,6 +20,12 @@ namespace HumaneSociety.cs
         {
             get { return status; }
             set { status = value; }
+        }
+
+        public int RoomNumber
+        {
+            get { return roomNumber; }
+            set { roomNumber = value; }
         }
     }
 }

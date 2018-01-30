@@ -35,11 +35,12 @@ namespace HumaneSociety.cs
             return false;
         } 
 
-
         public int CheckHotelRoom(int Animal_ID)
         {
             int Room_Number = 1;
             //LINQ foreach compare parameter to Animal_Log SELECT Room_Number
+            var db = new Animal_Hotel
+            var availableRooms = 
 
             return Room_Number;
         }

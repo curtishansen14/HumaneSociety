@@ -5,6 +5,7 @@ using System.Data.Linq;
 using System.Data.Linq.Mapping;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace HumaneSociety.cs
 {
@@ -23,10 +24,7 @@ namespace HumaneSociety.cs
         //        Console.WriteLine("ID={0}, City ={1}", cust.City, cust.City);
         //    }
 
-        public void GetAnimalID()
-        {
-
-        }
+ 
     //Create
     //Read
     //Update

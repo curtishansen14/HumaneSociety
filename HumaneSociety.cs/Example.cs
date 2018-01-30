@@ -5,6 +5,7 @@ using System.Data.Linq;
 using System.Data.Linq.Mapping;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace HumaneSociety.cs
 {
@@ -48,6 +49,21 @@ namespace HumaneSociety.cs
     }
     class Example
     {
+        private static void OpenSqlConnection()
+        {
+            string connectionString = GetConnectionString();
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                Console.WriteLine("ServerVersion: {0", connection.ServerVersion);
+                Console.WriteLine("State: {0", connection.State);
+            }
+        }
+
+        static private string GetConnectionString()
+        {
+            return "Date Source=(local);Initial Catalog=AdventureWorks;" + "Integrated Security=SSPI";
+        }
     }
 }
 

@@ -9,10 +9,13 @@ using System.Data.SqlClient;
 
 namespace HumaneSociety.cs
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
+            Profile profile = new Profile();
+
+            profile.GetAdopterName();
         }
     }
 }

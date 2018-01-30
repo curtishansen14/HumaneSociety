@@ -20,10 +20,17 @@ namespace HumaneSociety.cs
         //constructor
         public Employee()
         {
-            Database = new cs.HumanSocietyDB();
+            Database = new HumanSocietyDB();
         }
 
         //member methods 
+        public void AddAnimal()
+        {
+            HumanSocietyDB db = new HumanSocietyDB();
+            db.Animal_Log.Add(new Animal_Log() { Animal_Name = "Max", Adoption_Date = null, Age = 2, Price = 20, Maintence_Score = 1, Shots = null, Species = 1, Weekly_Consumption = 3 });
+        }
+
+
 
         public void CheckHotelRoom(HumanSocietyDB Database)
         {
@@ -35,56 +42,75 @@ namespace HumaneSociety.cs
 
         //LINQ foreach compare parameter to Animal_Log SELECT Room_Number
 
+        //public void assignHotelRoom(HumanSocietyDB Database, int GivenRoom_Number)
+        //{
+            
+        //    var availableRooms = from row in Database.Animal_Hotel
+        //                         where (row.Availablity == true && GivenRoom_Number == row.Room_Number)
+        //                         select row.Room_Number;
+        //    foreach (Room_Number in availableRooms)
+        //    {
+        //       //row.availability = false;
+        //    }
+        //}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        public decimal Register(List<Coin> money)
+        public void CheckShotStatus(HumanSocietyDB Database)
         {
-            int total = 0;
-            for (int i = 0; i < money.Count; i++)
-            {
-                total += money[i].Value;
-            }
-            return total;
+            var shotStatus = (from row in Database.Animal_Log
+                              select row.Shots).ToList();
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //public decimal Register(List<Coin> money)
+        //{
+        //    int total = 0;
+        //    for (int i = 0; i < money.Count; i++)
+        //    {
+        //        total += money[i].Value;
+        //    }
+        //    return total;
+        //}
         
         public bool Add(Animal animal)
         {

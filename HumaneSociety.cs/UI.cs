@@ -7,12 +7,17 @@ using System.Data.SqlClient;
 
 namespace HumaneSociety.cs
 {
-    class UI
+    public static class UI
     {
-        public string getUserInput()
+        public static string getUserInput()
         {
             string userInput = Console.ReadLine();
             return userInput; 
+        }
+
+        public static void DisplayMesage(string message)
+        {
+            Console.WriteLine(message);
         }
     }
 }

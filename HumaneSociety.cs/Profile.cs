@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HumaneSociety.cs
 {
-    class Profile
+   public class Profile
     {
         //memeber variables
         string firstName;

@@ -14,12 +14,68 @@ namespace HumaneSociety.cs
 
 
         //member variables
+        HumanSocietyDB Database;
 
 
         //constructor
-
+        public Employee()
+        {
+            Database = new cs.HumanSocietyDB();
+        }
 
         //member methods 
+
+        public void CheckHotelRoom(HumanSocietyDB Database)
+        {
+            //var database = new HumanSocietyDB();
+            List<int> availableRooms = (from row in Database.Animal_Hotel
+                                  where row.Availablity == true
+                                  select row.Room_Number).ToList();
+        }
+
+        //LINQ foreach compare parameter to Animal_Log SELECT Room_Number
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         public decimal Register(List<Coin> money)
         {
             int total = 0;
@@ -35,16 +91,6 @@ namespace HumaneSociety.cs
             //Linq update database
             return false;
         } 
-
-        public int CheckHotelRoom(int Animal_ID)
-        {
-            int Room_Number = 1;
-            //LINQ foreach compare parameter to Animal_Log SELECT Room_Number
-            var db = new Animal_Hotel
-            var availableRooms = 
-
-            return Room_Number;
-        }
 
         public bool SetAdoptionStatus()
         {

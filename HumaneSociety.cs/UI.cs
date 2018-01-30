@@ -19,5 +19,22 @@ namespace HumaneSociety.cs
         {
             Console.WriteLine(message);
         }
+
+        public static bool getUserInputBool()
+        {
+            //does the animal have it's shots
+            //utilize if statement to return true or false 
+            return false;
+        }
+
+        public static decimal getUserInputdecimal()
+        {
+            decimal number = decimal.Parse(Console.ReadLine());
+            return number;
+          
+        }
+        //method to get species put switch case choose number. 
+
+        //method to display all Animal_Log information 
     }
 }

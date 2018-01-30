@@ -26,11 +26,25 @@ namespace HumaneSociety.cs
         //member methods 
         public void AddAnimal()
         {
-            HumanSocietyDB db = new HumanSocietyDB();
-            db.Animal_Log.Add(new Animal_Log() { Animal_Name = "Max", Adoption_Date = null, Age = 2, Price = 20, Maintence_Score = 1, Shots = null, Species = 1, Weekly_Consumption = 3 });
+            Animal_Log Animal = AnimalForm();
+            Database.Animal_Log.Add(Animal); 
+            Database.SaveChanges();
         }
 
+        public Animal_Log AnimalForm()
+        {
+            Animal_Log AnimalToAdd = new Animal_Log();
+            UI.DisplayMesage("What is the animal's name?");
+            AnimalToAdd.Animal_Name = UI.getUserInput();
+            //repeat for all AnimalToAdd.Things 
+            //for true and false one I will need a second step
+            return AnimalToAdd;
+        }
 
+        public void AssignRoom()
+        {
+
+        }
 
         public void CheckHotelRoom(HumanSocietyDB Database)
         {
@@ -61,47 +75,6 @@ namespace HumaneSociety.cs
         }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         //public decimal Register(List<Coin> money)
         //{
         //    int total = 0;
@@ -112,11 +85,6 @@ namespace HumaneSociety.cs
         //    return total;
         //}
         
-        public bool Add(Animal animal)
-        {
-            //Linq update database
-            return false;
-        } 
 
         public bool SetAdoptionStatus()
         {
@@ -130,23 +98,9 @@ namespace HumaneSociety.cs
             return false;
         }
 
-        public bool checkShotStatus()
-        {
-            //Linq read table
-            return false;
-        }
 
-        public void setAnimalType(Animal animal)
-        {
-            //LINQ to Animal_Log update Species  
-        }
 
-        public void checkConsumption(Animal animal)
-        {
-            //foreach given return int food consumption
-        }
-
-        public bool acceptPayment(Animal animal)
+        public bool acceptPayment()
         {
             //LINQ update Animal_Log paid for
             //call setAdoptionStatus

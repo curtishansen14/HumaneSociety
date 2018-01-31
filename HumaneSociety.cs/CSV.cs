@@ -69,6 +69,7 @@ namespace HumaneSociety.cs
                     }
                         
                 }
+                dbconnection.Close();
             }
         }    
     }

@@ -54,22 +54,12 @@ namespace HumaneSociety.cs
             return AnimalToAdd;
         }
 
-        public void AddAdopter()
+
+        public void AddAdopter(Adopter adopter)
         {
-            Adopters_Log Adopter = AdopterForm();
+            Adopters_Log Adopter = adopter.AdopterForm();
             Database.Adopters_Log.Add(Adopter);
             Database.SaveChanges();
-        }
-
-        public Adopters_Log AdopterForm()
-        {
-            Adopters_Log AdopterToAdd = new Adopters_Log();
-            UI.DisplayMesage("What is adopters first name?");
-            AdopterToAdd.First_Name = UI.getUserInput();
-            UI.DisplayMesage("What is adopters last name?");
-            AdopterToAdd.Last_Name = UI.getUserInput();
-
-            return AdopterToAdd;
         }
 
         public void CheckHotelRooms()

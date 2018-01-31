@@ -85,7 +85,8 @@ namespace HumaneSociety.cs
             var weeklyConsumption = (from row in Database.Animal_Log
                                      where row.Animal_ID == AnimalID
                                      select row.Weekly_Consumption);
-            Console.WriteLine(weeklyConsumption);
+
+            Console.WriteLine("{1} cups of food per a week", weeklyConsumption);
         }
 
         public decimal acceptPayment()

@@ -58,6 +58,17 @@ namespace HumaneSociety.cs
             command.CommandText = "UPDATE Animal_Log SET Species = @EmployeeInput WHERE Animal_Id = @Animal_ID";
         }
        
+        public void AcceptPayment(decimal payment)
+        {
+            command.Parameters.AddWithValue("@Payment", payment);
+            command.CommandText = "INSERT INTO Register VALUES @Payment";
+        }
 
+        public void GiveChange(decimal change)
+        {
+            command.Parameters.AddWithValue("@change", (change * -1));
+
+            command.CommandText = "INERT INTO Register VALUES @change";
+        }
 }
 }

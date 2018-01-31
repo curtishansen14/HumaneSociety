@@ -30,6 +30,13 @@ namespace HumaneSociety.cs
             command.Parameters.AddWithValue("@animalID", Animal_ID);
              
         }
+
+        public void GiveShot(int Animal_ID)
+        {
+            command.CommandText = "Update Animal_Log SET Shots = true Where @animalID";
+
+            command.Parameters.AddWithValue("@animalID", Animal_ID); 
+        }
        
     //Create
     //Read

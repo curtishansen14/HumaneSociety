@@ -56,9 +56,9 @@ namespace HumaneSociety.cs
 
         }
 
-        public void CheckHotelRoom(HumanSocietyDB Database)
+        public void CheckHotelRoom()
         {
-            //var database = new HumanSocietyDB();
+            
             List<int> availableRooms = (from row in Database.Animal_Hotel
                                   where row.Availablity == true
                                   select row.Room_Number).ToList();
@@ -78,7 +78,7 @@ namespace HumaneSociety.cs
         //    }
         //}
 
-        public void CheckShotStatus(HumanSocietyDB Database)
+        public void CheckShotStatus()
         {
             var shotStatus = (from row in Database.Animal_Log
                               select row.Shots).ToList();

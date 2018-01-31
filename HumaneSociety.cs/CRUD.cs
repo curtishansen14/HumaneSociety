@@ -11,20 +11,26 @@ namespace HumaneSociety.cs
 {
     class CRUD
     {
-        //DataContext db = new DataContext(@"C:\Users\User\Documents\Visual Studio 2015\lingqtest4\northwnd.mdf");
-        //db.Log = Console.Out;
+        
+       string connectionString = "data source=DESKTOP-KCT0PF7;initial catalog=HumaneSociety;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework"
+       SqlConnection connection;
+        SqlCommand command;
 
-        //    IQueryable<Customer> custQuery =
-        //        from cust in Customers
-        //        where cust.City == "London"
-        //        select cust;
+        public CRUD()
+        {
+            connection = new SqlConnection(connectionString);
+            command = new SqlCommand();
+        }
 
-        //    foreach (Customer cust in custQuery)
-        //    {
-        //        Console.WriteLine("ID={0}, City ={1}", cust.City, cust.City);
-        //    }
+        public void AssignRoomNumber(int Room_Number, int Animal_ID)
+        {
+            command.CommandText = "Update Animal_Log SET Room_Number = @room Where @animalID";
 
- 
+            command.Parameters.AddWithValue("@room", Room_Number);
+            command.Parameters.AddWithValue("@animalID", Animal_ID);
+             
+        }
+       
     //Create
     //Read
     //Update

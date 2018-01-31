@@ -63,6 +63,7 @@
     <Compile Include="Animal_log.cs" />
     <Compile Include="CRUD.cs" />
     <Compile Include="CSV.cs" />
+    <Compile Include="CSVreader.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="HumanSocietyDB.cs" />
     <Compile Include="Profile.cs" />

@@ -13,8 +13,9 @@ namespace HumaneSociety.cs
     {
         static void Main(string[] args)
         {
-            Employee employee = new Employee();
-            employee.CheckHotelRooms();
+            CSVreader reader = new CSVreader();
+            reader.ParseCSV();
+            Console.ReadKey();
         }
     }
 }

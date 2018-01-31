@@ -62,8 +62,8 @@
     <Compile Include="Animal_Hotel.cs" />
     <Compile Include="Animal_log.cs" />
     <Compile Include="CRUD.cs" />
-    <Compile Include="CSV.cs" />
     <Compile Include="CSVreader.cs" />
+    <Compile Include="DataTypeConverter.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="HumanSocietyDB.cs" />
     <Compile Include="Profile.cs" />

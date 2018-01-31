@@ -24,28 +24,32 @@ namespace HumaneSociety.cs
 
         public void AssignRoomNumber(int Room_Number, int Animal_ID)
         {
-            command.CommandText = "Update Animal_Log SET Room_Number = @room Where @animalID";
 
             command.Parameters.AddWithValue("@room", Room_Number);
             command.Parameters.AddWithValue("@animalID", Animal_ID);
-             
+
+            command.CommandText = "Update Animal_Log SET Room_Number = @room Where @animalID";   
         }
 
         public void GiveShot(int Animal_ID)
         {
+            command.Parameters.AddWithValue("@animalID", Animal_ID);
+
             command.CommandText = "Update Animal_Log SET Shots = true Where @animalID";
 
-            command.Parameters.AddWithValue("@animalID", Animal_ID); 
+            
+        }
+
+        public void SetAdoptionDate( DateTime AdoptionDate, int Animal_ID)
+        {
+            command.Parameters.AddWithValue("@AdoptionDate", AdoptionDate);
+            command.Parameters.AddWithValue("@Animal_ID", Animal_ID);
+
+            command.CommandText = "Update Animal_Log SET Adoption_Date = @AdoptionDate Where Animal_ID =@Animal_ID";
+
+            
         }
        
-    //Create
-    //Read
-    //Update
-    //Delete
 
-    //Update SQL data base
-    //LinQ?
-
-    //Interface?
 }
 }

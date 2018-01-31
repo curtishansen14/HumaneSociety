@@ -53,7 +53,7 @@ namespace HumaneSociety.cs
 
         public void AssignRoom()
         {
-
+            
         }
 
         public void CheckHotelRoom()
@@ -99,12 +99,6 @@ namespace HumaneSociety.cs
         public bool SetAdoptionStatus()
         {
             //Linq updates data base
-            return false;
-        }
-
-        public bool giveShot()
-        {
-            //Linq update shot status
             return false;
         }
 

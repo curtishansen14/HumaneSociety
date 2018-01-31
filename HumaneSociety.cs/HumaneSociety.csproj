@@ -59,7 +59,6 @@
     <Compile Include="Accounts.cs" />
     <Compile Include="Adopter.cs" />
     <Compile Include="Adopters_log.cs" />
-    <Compile Include="Animal.cs" />
     <Compile Include="Animal_Hotel.cs" />
     <Compile Include="Animal_log.cs" />
     <Compile Include="CRUD.cs" />

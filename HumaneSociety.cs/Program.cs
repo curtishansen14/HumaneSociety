@@ -13,9 +13,8 @@ namespace HumaneSociety.cs
     {
         static void Main(string[] args)
         {
-            Profile profile = new Profile();
-
-            profile.GetAdopterName();
+            Employee employee = new Employee();
+            employee.
         }
     }
 }

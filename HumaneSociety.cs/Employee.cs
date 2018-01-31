@@ -36,8 +36,18 @@ namespace HumaneSociety.cs
             Animal_Log AnimalToAdd = new Animal_Log();
             UI.DisplayMesage("What is the animal's name?");
             AnimalToAdd.Animal_Name = UI.getUserInput();
+            UI.DisplayMesage("What species is it?");
+            AnimalToAdd.Species = UI.getanimaltype();
+            UI.DisplayMesage("What is the animal's age?");
+            AnimalToAdd.Animal_Name = UI.getUserInput();
+            UI.DisplayMesage("How much does the animal cost?");
+            AnimalToAdd.Price = UI.getUserInputdecimal();
+            UI.DisplayMesage("What is the animal's maintence score?");
+            AnimalToAdd.Maintence_Score = UI.getUserInputInt();
+            
             //repeat for all AnimalToAdd.Things 
             //for true and false one I will need a second step
+            
             return AnimalToAdd;
         }
 

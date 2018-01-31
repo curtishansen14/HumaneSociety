@@ -54,6 +54,23 @@ namespace HumaneSociety.cs
             return AnimalToAdd;
         }
 
+        public void AddAdopter()
+        {
+            Adopters_Log Adopter = AdopterForm();
+            Database.Adopters_Log.Add(Adopter);
+            Database.SaveChanges();
+        }
+
+        public Adopters_Log AdopterForm()
+        {
+            Adopters_Log AdopterToAdd = new Adopters_Log();
+            UI.DisplayMesage("What is adopters first name?");
+            AdopterToAdd.First_Name = UI.getUserInput();
+            UI.DisplayMesage("What is adopters last name?");
+            AdopterToAdd.Last_Name = UI.getUserInput();
+
+            return AdopterToAdd;
+        }
 
         public void CheckHotelRooms()
         {
@@ -101,16 +118,5 @@ namespace HumaneSociety.cs
 
             Console.WriteLine("{1} cups of food per a week", weeklyConsumption);
         }
-
-
-        //public decimal Register(List<Coin> money)
-        //{
-        //    int total = 0;
-        //    for (int i = 0; i < money.Count; i++)
-        //    {
-        //        total += money[i].Value;
-        //    }
-        //    return total;
-        //}
     }
 }

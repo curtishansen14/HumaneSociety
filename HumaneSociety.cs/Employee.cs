@@ -37,16 +37,16 @@ namespace HumaneSociety.cs
             UI.DisplayMesage("What is the animal's name?");
             AnimalToAdd.Animal_Name = UI.getUserInput();
             UI.DisplayMesage("What species is it?");
-            AnimalToAdd.Species = UI.getanimaltype();
+            AnimalToAdd.Species = UI.getAnimalType();
             UI.DisplayMesage("What is the animal's age?");
-            AnimalToAdd.Animal_Name = UI.getUserInput();
+            AnimalToAdd.Age = UI.getUserInputInt();
             UI.DisplayMesage("How much does the animal cost?");
             AnimalToAdd.Price = UI.getUserInputdecimal();
             UI.DisplayMesage("What is the animal's maintence score?");
+            UI.DisplayMesage("1 for low maintence, 2 for medium, 3 for high");
             AnimalToAdd.Maintence_Score = UI.getUserInputInt();
-            
-            //repeat for all AnimalToAdd.Things 
-            //for true and false one I will need a second step
+            UI.DisplayMesage("How many cups of food does the animal eat per a week?");
+            AnimalToAdd.Weekly_Consumption = UI.getUserInputInt();
             
             return AnimalToAdd;
         }

@@ -11,8 +11,8 @@ namespace HumaneSociety.cs
 {
     class CRUD
     {
-        
-       string connectionString = "data source=DESKTOP-KCT0PF7;initial catalog=HumaneSociety;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework"
+
+        string connectionString = "data source=DESKTOP-KCT0PF7;initial catalog=HumaneSociety;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework";
        SqlConnection connection;
         SqlCommand command;
 

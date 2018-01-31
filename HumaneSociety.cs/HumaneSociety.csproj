@@ -56,7 +56,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Accounts.cs" />
     <Compile Include="Adopter.cs" />
     <Compile Include="Adopters_log.cs" />
     <Compile Include="Animal_Hotel.cs" />
@@ -64,7 +63,6 @@
     <Compile Include="CRUD.cs" />
     <Compile Include="CSV.cs" />
     <Compile Include="Employee.cs" />
-    <Compile Include="Example.cs" />
     <Compile Include="HumanSocietyDB.cs" />
     <Compile Include="Profile.cs" />
     <Compile Include="Program.cs" />

@@ -39,6 +39,7 @@ namespace HumaneSociety.cs
             UI.DisplayMesage("What is the animal's name?");
             AnimalToAdd.Animal_Name = UI.getUserInput();
             UI.DisplayMesage("What species is it?");
+            UI.DisplayMesage("1 for Dog, 2 for Cat, 3 for Kangaroo, 4 for Turtle");
             AnimalToAdd.Species = UI.getAnimalType();
             UI.DisplayMesage("What is the animal's age?");
             AnimalToAdd.Age = UI.getUserInputInt();
@@ -54,14 +55,19 @@ namespace HumaneSociety.cs
         }
 
 
-        public void CheckHotelRoom()
+        public void CheckHotelRooms()
         {
             
             List<int> availableRooms = (from row in Database.Animal_Hotel
                                   where row.Availablity == true
                                   select row.Room_Number).ToList();
+            UI.DisplayMesage("The available rooms are:");
+            for (int i = 0; i < availableRooms.Count; i++)
+            {
+                Console.WriteLine(availableRooms[i]);
+            }
 
-            // for each to diplay
+            Console.ReadKey();
         }
 
 
@@ -69,8 +75,12 @@ namespace HumaneSociety.cs
         {
             var shotStatus = (from row in Database.Animal_Log
                               select row.Shots).ToList();
+            UI.DisplayMesage("Animal Shot status:");
 
-            //for each to display
+            for (int i = 0; i <shotStatus.Count; i++)
+            {
+                Console.WriteLine(shotStatus[i]);
+            }
         }
 
         public void getShotStatus(int AnimalID)
@@ -78,6 +88,9 @@ namespace HumaneSociety.cs
             var shotStatus = (from row in Database.Animal_Log
                               where row.Animal_ID == AnimalID
                               select row.Shots);
+            UI.DisplayMesage("Animal's Shot Status:");
+            Console.WriteLine(shotStatus);
+
         }
 
         public void getWeeklyConsumption(int AnimalID)
@@ -89,13 +102,6 @@ namespace HumaneSociety.cs
             Console.WriteLine("{1} cups of food per a week", weeklyConsumption);
         }
 
-        public decimal acceptPayment()
-        {
-            decimal payment = 0;
-            //LINQ update Animal_Log paid for
-            //call setAdoptionStatus
-            return payment;
-        }
 
         //public decimal Register(List<Coin> money)
         //{

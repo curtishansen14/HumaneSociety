@@ -15,12 +15,14 @@ namespace HumaneSociety.cs
 
         //member variables
         HumanSocietyDB Database;
+        CRUD crud;
 
 
         //constructor
         public Employee()
         {
             Database = new HumanSocietyDB();
+            crud = new CRUD();
         }
 
         //member methods 
@@ -51,10 +53,6 @@ namespace HumaneSociety.cs
             return AnimalToAdd;
         }
 
-        public void AssignRoom()
-        {
-            
-        }
 
         public void CheckHotelRoom()
         {
@@ -62,28 +60,41 @@ namespace HumaneSociety.cs
             List<int> availableRooms = (from row in Database.Animal_Hotel
                                   where row.Availablity == true
                                   select row.Room_Number).ToList();
+
+            // for each to diplay
         }
 
-        //LINQ foreach compare parameter to Animal_Log SELECT Room_Number
 
-        //public void assignHotelRoom(HumanSocietyDB Database, int GivenRoom_Number)
-        //{
-            
-        //    var availableRooms = from row in Database.Animal_Hotel
-        //                         where (row.Availablity == true && GivenRoom_Number == row.Room_Number)
-        //                         select row.Room_Number;
-        //    foreach (Room_Number in availableRooms)
-        //    {
-        //       //row.availability = false;
-        //    }
-        //}
-
-        public void CheckShotStatus()
+        public void getShotStatus()
         {
             var shotStatus = (from row in Database.Animal_Log
                               select row.Shots).ToList();
+
+            //for each to display
         }
 
+        public void getShotStatus(int AnimalID)
+        {
+            var shotStatus = (from row in Database.Animal_Log
+                              where row.Animal_ID == AnimalID
+                              select row.Shots);
+        }
+
+        public void getWeeklyConsumption(int AnimalID)
+        {
+            var weeklyConsumption = (from row in Database.Animal_Log
+                                     where row.Animal_ID == AnimalID
+                                     select row.Weekly_Consumption);
+            Console.WriteLine(weeklyConsumption);
+        }
+
+        public decimal acceptPayment()
+        {
+            decimal payment = 0;
+            //LINQ update Animal_Log paid for
+            //call setAdoptionStatus
+            return payment;
+        }
 
         //public decimal Register(List<Coin> money)
         //{
@@ -94,21 +105,5 @@ namespace HumaneSociety.cs
         //    }
         //    return total;
         //}
-        
-
-        public bool SetAdoptionStatus()
-        {
-            //Linq updates data base
-            return false;
-        }
-
-
-
-        public bool acceptPayment()
-        {
-            //LINQ update Animal_Log paid for
-            //call setAdoptionStatus
-            return false;
-        }
     }
 }

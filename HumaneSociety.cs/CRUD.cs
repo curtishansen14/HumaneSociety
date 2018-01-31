@@ -35,10 +35,12 @@ namespace HumaneSociety.cs
         {
             command.Parameters.AddWithValue("@animalID", Animal_ID);
 
-            command.CommandText = "Update Animal_Log SET Shots = true Where @animalID";
-
-            
+            command.CommandText = "Update Animal_Log SET Shots = true Where @animalID";    
         }
+
+        /////////////////////////////////////////////////////////////////////////
+       //////////Adoption Date indicates when/if an Animal was Adopted//////////
+      /////////////////////////////////////////////////////////////////////////
 
         public void SetAdoptionDate( DateTime AdoptionDate, int Animal_ID)
         {
@@ -46,8 +48,14 @@ namespace HumaneSociety.cs
             command.Parameters.AddWithValue("@Animal_ID", Animal_ID);
 
             command.CommandText = "Update Animal_Log SET Adoption_Date = @AdoptionDate Where Animal_ID =@Animal_ID";
+        }
 
-            
+        public void SetAnimalType(int? EmployeeInput, int Animal_ID)
+        {
+            command.Parameters.AddWithValue("@EmployeeInput", EmployeeInput);
+            command.Parameters.AddWithValue("@Animal_ID", Animal_ID);
+
+            command.CommandText = "UPDATE Animal_Log SET Species = @EmployeeInput WHERE Animal_Id = @Animal_ID";
         }
        
 

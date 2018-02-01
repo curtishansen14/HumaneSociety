@@ -9,9 +9,6 @@ namespace HumaneSociety.cs
 {
     class DataTypeConverter
     {
-        //String to Datetime
-        //string to int
-        //string to decimal 
 
         public DateTime ConvertStringToDateTime(string input)
         {
@@ -25,11 +22,25 @@ namespace HumaneSociety.cs
             return output;
         }
 
-        public decimal ConvertSrtingToDecimal(string input)
+        public decimal ConvertStringToDecimal(string input)
         {
             decimal output = Convert.ToDecimal(input);
             return output;
 
+        }
+
+        public bool ConvertStringToBool(string input)
+        {
+            bool shots = false;
+            if (input == "1")
+            {
+                shots = true;
+                return shots;
+            }
+            else
+            {
+                return shots;
+            }
         }
     }
 }

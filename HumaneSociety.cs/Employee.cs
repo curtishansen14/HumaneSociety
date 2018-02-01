@@ -213,6 +213,14 @@ namespace HumaneSociety.cs
             }
         }
 
+      
+        public void RunSearchByMultiple()
+        {
+            UI.DisplayMesage("Enter terms you want to search for");
+            UI.DisplayMesage("You can search by Speices, Age, and Maintence");
+            UI.DisplayMesage("Place one space between each search term");
+            SearchByMultiple(UI.getUserInput());
+        }
         public List<int> SearchByMultiple(string Search)
         {
 

@@ -108,5 +108,109 @@ namespace HumaneSociety.cs
 
             Console.WriteLine("{1} cups of food per a week", weeklyConsumption);
         }
+
+        public List<int> SearchBySpiecesType(string Spieces)
+        {
+
+            switch (Spieces.ToLower())
+            {
+                case "dog":
+                    List<int> ListOfDogs = (from row in Database.Animal_Log
+                                      where row.Species == 1
+                                      select row.Animal_ID).ToList();
+                    return ListOfDogs;
+
+                case "cat":
+
+                    var ListofCats = (from row in Database.Animal_Log
+                                      where row.Species == 2
+                                      select row.Animal_ID).ToList();
+                    return ListofCats;
+
+                case "kangaroo":
+
+                    var ListofKangaroos = (from row in Database.Animal_Log
+                                          where row.Species == 3
+                                           select row.Animal_ID).ToList();
+                    return ListofKangaroos;
+
+                case "turtle":
+
+                    var ListofTurtles = (from row in Database.Animal_Log
+                                         where row.Species == 4
+                                         select row.Animal_ID).ToList();
+                    return ListofTurtles;
+
+                default:
+                    Console.WriteLine("Species not housed");
+                    return null;
+            }  
+        }
+        public List<int> SearchByAge(string age)
+        {
+            switch (age)
+            {
+                case "1":
+                    List<int> ListOfAgeOne = (from row in Database.Animal_Log
+                                        where row.Age == 1
+                                        select row.Animal_ID).ToList();
+                    return ListOfAgeOne;
+
+                case "2":
+                    List<int> ListOfAgeTwo = (from row in Database.Animal_Log
+                                              where row.Age == 2
+                                              select row.Animal_ID).ToList();
+                    return ListOfAgeTwo;
+
+                case "3":
+
+                    List<int> ListofAgeThree = (from row in Database.Animal_Log
+                                                where row.Age == 3
+                                                select row.Animal_ID).ToList();
+                    return ListofAgeThree;
+
+                case "4": 
+
+                    List<int> ListofAgeFour = (from row in Database.Animal_Log
+                                               where row.Age == 4
+                                               select row.Animal_ID).ToList();
+                    return ListofAgeFour;
+
+                default:
+
+                    List<int> ListOfOldGuard = (from row in Database.Animal_Log
+                                                where row.Age > 4 
+                                                select row.Animal_ID).ToList();
+                    return ListOfOldGuard;
+            }
+        }
+
+        public List<int> SearchByMaintence( string Maintence_Score)
+        {
+            switch (Maintence_Score)
+            {
+                case "1":
+                    List<int> ListofLowMaintence = (from row in Database.Animal_Log
+                                                    where row.Maintence_Score == 1
+                                                    select row.Animal_ID).ToList();
+                    return ListofLowMaintence;
+
+                case "2":
+                    List<int> ListofMediumMaintence = (from row in Database.Animal_Log
+                                                    where row.Maintence_Score == 2
+                                                    select row.Animal_ID).ToList();
+                    return ListofMediumMaintence;
+
+                case "3":
+                    List<int> ListofHighMaintence = (from row in Database.Animal_Log
+                                                    where row.Maintence_Score == 3
+                                                    select row.Animal_ID).ToList();
+                    return ListofHighMaintence;
+                default:
+                    Console.WriteLine("No Animals of that maintence level. Please enter 1 for low 2 for medium or 3 for high. Please enter new search");
+                    return null;
+                    
+            }
+        }
     }
 }

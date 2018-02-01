@@ -27,7 +27,7 @@ namespace HumaneSociety.cs
                             aAge = converter.ConvertStringToInt(data[4]),
                             aPrice = converter.ConvertStringToDecimal(data[5]),
                             aMaintence_Score = converter.ConvertStringToInt(data[6]),
-                            aShots =  data[7],
+                            aShots =  converter.ConvertStringToBool(data[7]),
                             aSpecies = converter.ConvertStringToInt(data[8]),
                             aWeekly_consumption = converter.ConvertStringToInt(data[9])
                         };

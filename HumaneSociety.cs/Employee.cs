@@ -109,10 +109,10 @@ namespace HumaneSociety.cs
             Console.WriteLine("{1} cups of food per a week", weeklyConsumption);
         }
 
-        public List<int> SearchBySpiecesType(string Spieces)
+        public List<int> SearchBySpiecesType()
         {
 
-            switch (Spieces.ToLower())
+            switch (UI.getUserInput().ToLower())
             {
                 case "dog":
                     List<int> ListOfDogs = (from row in Database.Animal_Log
@@ -146,9 +146,9 @@ namespace HumaneSociety.cs
                     return null;
             }  
         }
-        public List<int> SearchByAge(string age)
+        public List<int> SearchByAge()
         {
-            switch (age)
+            switch (UI.getUserInput().ToLower())
             {
                 case "1":
                     List<int> ListOfAgeOne = (from row in Database.Animal_Log
@@ -185,9 +185,9 @@ namespace HumaneSociety.cs
             }
         }
 
-        public List<int> SearchByMaintence( string Maintence_Score)
+        public List<int> SearchByMaintence()
         {
-            switch (Maintence_Score)
+            switch (UI.getUserInput().ToLower())
             {
                 case "1":
                     List<int> ListofLowMaintence = (from row in Database.Animal_Log
@@ -211,6 +211,33 @@ namespace HumaneSociety.cs
                     return null;
                     
             }
+        }
+
+        public List<int> SearchByMultiple(string Search)
+        {
+
+            List<int> FilteredAnimals = (from row in Database.Animal_Log
+                                         where row.Adoption_Date == null
+                                         select row.Animal_ID).ToList(); 
+            string[] SearchTerms = Search.ToLower().Split(' ');
+            for (int i = 0; i < SearchTerms.Length; i++)
+            {
+                switch (SearchTerms[i])
+                {
+                    case "spieces":
+                        FilteredAnimals = SearchBySpiecesType();
+                        return FilteredAnimals;
+                    case "maintence":
+                        FilteredAnimals = SearchByMaintence();
+                        return FilteredAnimals;
+                    case "age":
+                        FilteredAnimals = SearchByAge();
+                        return FilteredAnimals;
+                    default:
+                        return FilteredAnimals;           
+                }
+            }
+            return FilteredAnimals;
         }
     }
 }
